@@ -9,7 +9,15 @@ $(document).ready(function () {
 		});
 	});
 
-	
+	$("#id_brand,#id_os").on("change", function () {
+		var brand_values = $('#id_brand').find("option:selected").val();
+		var os_values = $('#id_os').find("option:selected").val();
+		SearchData(brand_values, os_values);
+	});
+	$("#output").on("click", "#remove_link", function () {
+
+		$($(this).parent()).parent().hide();
+	});
 
 });
 
